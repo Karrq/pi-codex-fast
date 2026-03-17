@@ -108,13 +108,7 @@ export default function codexFastExtension(pi: ExtensionAPI): void {
 
 	function updateStatus(ctx: ExtensionContext): void {
 		if (!ctx.hasUI) return;
-		if (!fastModeEnabled) {
-			ctx.ui.setStatus(STATUS_KEY, undefined);
-			return;
-		}
-
-		const label = supportsPriorityServiceTier(ctx) ? "⚡ OpenAI fast mode" : "⚡ fast (inactive)";
-		ctx.ui.setStatus(STATUS_KEY, ctx.ui.theme.fg("accent", label));
+		ctx.ui.setStatus(STATUS_KEY, undefined);
 	}
 
 	function notifyState(ctx: ExtensionContext): void {
